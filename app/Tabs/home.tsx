@@ -11,6 +11,7 @@ import apiClient from "@/utils/apiClient";
 import userDeliveryAuth from "@/context/authContext";
 import { useLocation } from '@/context/locatonContext';
 import { useEarnings } from '@/Hooks/earningHooks';
+import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 
 const HomeScreen = () => {
   const [isOnline, setIsOnline] = useState(false);
@@ -83,8 +84,11 @@ const HomeScreen = () => {
               </View>
             </TouchableOpacity>
           </View>
-          <TouchableOpacity style={styles.helpButton}>
+          {/* <TouchableOpacity style={styles.helpButton}>
             <FontAwesome6 name="user-large" size={24} color="black" onPress={() => router.push('./profile/profile')} />
+          </TouchableOpacity> */}
+          <TouchableOpacity style={styles.helpButton} onPress={()=> router.push('/profile/momhelp')}>
+            <Text style={{fontSize: 19}}> <SimpleLineIcons name="earphones-alt" color="#000" size={19} />{' '}Help</Text>
           </TouchableOpacity>
         </View>
 

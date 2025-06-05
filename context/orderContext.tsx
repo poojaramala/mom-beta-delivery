@@ -24,7 +24,7 @@ export const OrderProvider = ({ children }) => {
       const response = await apiClient("api/allorders", {
         method: "GET",
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization:`Bearer ${token}`,
           "Content-Type": "application/json",
         },
       });

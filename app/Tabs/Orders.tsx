@@ -301,22 +301,20 @@ const DeliveryDashboard = () => {
   
   const isInitialMount = useRef(true);
 
-  // Auto-refresh orders every 5 seconds
   useEffect(() => {
     if (isInitialMount.current) {
       console.log('Orders page mounted - starting auto-refresh');
       isInitialMount.current = false;
     }
     
-    // Initial fetch
+
     fetchOrders();
-    
-    // Set up interval for auto-refresh
+
     const intervalId = setInterval(() => {
       fetchOrders();
     }, 5000);
     
-    // Clean up interval on component unmount
+  
     return () => clearInterval(intervalId);
   }, []);
 
